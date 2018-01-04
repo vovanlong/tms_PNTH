@@ -32,3 +32,11 @@
 en:
   hello: "Hello world"
   title: "Framgia training system"
+  layouts:
+    header:
+      framgia: "<span>Framgia</span> TMS"
+    footer:
+      des: "2018 framgia training system"
+  static_pages:
+    home:
+      title: "Home"
