@@ -1,0 +1,7 @@
+<li>
+  <%= link_to course.name, course %> |
+  <%= course.created_at %> |
+  <%= link_to t("courses.index.delete"), course,
+    method: :delete, data: {confirm: t("courses.index.confirm_delete")} %> |
+  <%= link_to "update", edit_course_path(course) %>
+</li>
