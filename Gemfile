@@ -5,6 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "carrierwave", "1.1.0"
+gem "mini_magick", "4.7.0"
+gem "fog-aws", "2.0.0"
+gem "nokogiri", "1.8.1"
+gem "will_paginate", "3.1.6"
+gem "bootstrap-will_paginate", "1.0.0"
+gem "faker", "1.7.3"
+gem "jquery-rails"
+gem "config"
 gem "rails", "~> 5.1.4"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"

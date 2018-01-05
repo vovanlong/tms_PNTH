@@ -40,3 +40,25 @@ en:
   static_pages:
     home:
       title: "Home"
+  courses:
+    create:
+      success: "Course created"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    destroy:
+      success: "Deleted"
+    load_course:
+      not_found: "Could not found course"
+    title: "Course"
+    show:
+      title: "Courses"
+    index:
+      delete: "delete"
+      confirm_delete: "Are you sure?"
+    new:
+      title: "New Course"
+      btn_submit: "Create"
+    edit:
+      title: "Update Course"
+      btn_submit: "Save changes"

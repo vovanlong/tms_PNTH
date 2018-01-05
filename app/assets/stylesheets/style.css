@@ -2958,8 +2958,7 @@ input.checkbox:checked:after {
 	.snipcart-details {
 		width: 88%;
 	}
-	.typo, .privacy, .faq, .services, .events, .mail, .agileinfo_single, .w3_login {
-		padding: 5em 3em;
+		padding: 20px 20px;
 	}
 	.events_bottom_left1_grid {
 		width: 110px;
@@ -3097,7 +3096,7 @@ input.checkbox:checked:after {
 		padding: 3em 0 0 3em !important;
 	}
 	.typo, .privacy, .faq, .services, .events, .mail, .agileinfo_single, .w3_login {
-		padding: 4em 3em;
+		padding: 1em 1em;
 	}
 	.w3agile_event_grid_right h4 {
 		font-size: 1.1em;
@@ -4825,4 +4824,9 @@ input.checkbox:checked:after {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+
+.typo, .privacy, .faq, .services, .events, .mail, .agileinfo_single, .w3_login {
+    padding: 1em;
 }
