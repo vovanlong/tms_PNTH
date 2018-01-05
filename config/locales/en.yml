@@ -35,6 +35,11 @@ en:
   layouts:
     header:
       framgia: "<span>Framgia</span> TMS"
+      profile: "Profile"
+      settings: "Settings"
+      account: "Account"
+      log_in: "Log in"
+      log_out: "Log out"
     footer:
       des: "2018 framgia training system"
   static_pages:
@@ -62,3 +67,32 @@ en:
     edit:
       title: "Update Course"
       btn_submit: "Save changes"
+  sessions:
+    new:
+      title: "Log in"
+      str: "Sign up now!"
+      content: "New user? %{link}"
+      str2: "Remember me on this computer"
+      forgot: "forgot password"
+  users:
+    edit:
+      title: "Edit user"
+      str: "Update your profile"
+      button: "Save changes"
+      img: "change"
+      confirm: "Confirmation"
+    index:
+      title: "All users"
+    show:
+      edit: "Edit"
+  shared:
+    error_messages:
+      content: "The form contains %{error_messages}"
+      messages: "error"
+  controllers:
+    sessions_controller:
+      success: "Login success"
+      fail: "Invalid email/password combination"
+      message: "Account not activated.Check your email for the activation link."
+    user_controller:
+      update_success: "Profile updated"
