@@ -34,6 +34,7 @@ en:
   title: "Framgia training system"
   wrong: "Somthing went wrong!"
   error: "Somthing went wrong"
+  Max_size_picure: "Maximum file size is 5MB. Please choose a smaller file."
   layouts:
     header:
       framgia: "<span>Framgia</span> TMS"
@@ -106,12 +107,21 @@ en:
     index:
       title: "All users"
     show:
-      edit: "Edit"
-      profile: "Profile User"
-      name: "Full name"
-      email: "email"
-      address: "Address"
-      school: "School"
+      edit: "Edit:"
+      profile: "Profile User:"
+      name: "Full name:"
+      email: "email:"
+      address: "Address:"
+      school: "School:"
+      init: "init"
+      in_progress: "in progress"
+      finished: "finished"
+      imeline: "Timeline"
+      activities: "Activities"
+      profile: "Profile"
+      progress: "Progress"
+
+
   shared:
     error_messages:
       content: "The form contains %{error_messages}"
@@ -147,6 +157,23 @@ en:
       title: "Update Subject"
       btn_submit: "Save changes"
   tasks:
+    index:
+      title: "Manage Task"
+    new:
+      btn_submit: "Create"
+      title: "New Task"
+    create:
+      success: "Taks created"
+    edit:
+      title: "Update Taks"
+      btn_submit: "Save changes"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    destroy:
+      success: "Deleted"
+    load_subject:
+      not_found: "Could not found Subject"
     create:
       success: "Subject created"
     update:

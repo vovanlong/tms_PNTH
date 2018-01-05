@@ -29,10 +29,31 @@ end
 
 20.times do |n|
   CourseSubject.create!(course_id: 1,
-                        subject_id: Subject.all.ids.sample,
+                        subject_id: n+1,
                         deadline: Time.zone.now)
 
-  UserCourse.create!(course_id: 1,
-                     user_id: User.all.ids.sample,
+  UserCourse.create!(course_id: n+1,
+                     user_id: 1,
                      status: 1)
+end
+
+10.times do |n|
+  UserSubject.create!(status: 1,
+    user_id: 1, subject_id: n+1,
+    created_at: Time.zone.now,
+                 updated_at: Time.zone.now)
+end
+
+30.times do |n|
+  Task.create!(name: "Example Task #{n+1}",
+                  description: "taks lorem ipsum #{n+1}",
+                  subject_id: 1)
+end
+
+30.times do |n|
+  UserTask.create!(user_id: 1,
+                 task_id: n+1,
+                 status: 1,
+                 created_at: Time.zone.now,
+                 updated_at: Time.zone.now)
 end
