@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.name_max_lengh}
   validates :address, length: {maximum: Settings.address_max_lengh}
   validates :school, length: {maximum: Settings.school_max_lengh}
+  has_many :user_courses, dependent: :nullify
+  has_many :courses, through: :user_courses
   before_save :downcase_email
   has_secure_password
   scope :desc_created_at, ->{order(created_at: :desc)}

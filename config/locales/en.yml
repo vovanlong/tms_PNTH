@@ -85,6 +85,11 @@ en:
       title: "All users"
     show:
       edit: "Edit"
+      profile: "Profile User"
+      name: "Full name"
+      email: "email"
+      address: "Address"
+      school: "School"
   shared:
     error_messages:
       content: "The form contains %{error_messages}"

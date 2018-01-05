@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     @users = User.desc_created_at.paginate page: params[:page], per_page: Settings.per_page
   end
 
-  def show; end
+  def show
+    @courses = current_user.courses.created_desc
+  end
 
   def edit; end
 
