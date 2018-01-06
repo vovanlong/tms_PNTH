@@ -33,6 +33,7 @@ en:
   hello: "Hello world"
   title: "Framgia training system"
   wrong: "Somthing went wrong!"
+  error: "Somthing went wrong"
   layouts:
     header:
       framgia: "<span>Framgia</span> TMS"
@@ -43,6 +44,17 @@ en:
       log_out: "Log out"
     footer:
       des: "2018 framgia training system"
+  supervisor:
+    layouts:
+      header:
+        framgia: "<span>Framgia</span> TMS"
+        profile: "Profile"
+        settings: "Settings"
+        account: "Account"
+        log_in: "Log in"
+        log_out: "Log out"
+      footer:
+        des: "2018 TMS for supervisors"
   static_pages:
     home:
       title: "Home"
