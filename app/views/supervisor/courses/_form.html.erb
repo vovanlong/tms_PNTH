@@ -1,4 +1,4 @@
-<%= form_for @course do |f| %>
+<%= form_for [:supervisor, @course], class: "form-group" do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
   <%= f.label :name %>
@@ -8,7 +8,8 @@
   <%= f.text_field :description, class: "form-control" %>
 
   <%= f.label :status %>
-  <%= f.text_field :status, class: "form-control" %>
+  <%= select "course", "status", Course.statuses.map {|name, index|
+    [t(".#{name}"),name]}, html: {class: "form-control"} %></br>
 
   <%= f.label :start_at %>
   <%= f.date_field :start_at, class: "form-control" %>

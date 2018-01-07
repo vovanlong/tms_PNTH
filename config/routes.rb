@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :users
   namespace :supervisor do
     resources :courses
+    resources :course_subjects, only: %i(create update destroy)
   end
 end

@@ -56,13 +56,33 @@ en:
       footer:
         des: "2018 TMS for supervisors"
     courses:
+      form:
+        init: "initialize"
+        in_progress: "in progress"
+        finish: "finished"
+      add_subject:
+        duration: "duration:"
+        btn_submit: "add"
+      remove_subject:
+        btn_submit: "remove"
+      index:
+        title: "Manage Courses"
       show:
+        edit: "Edit Course"
         tasks: "Tasks"
         members: "Members"
         subjects: "Subjects"
         trainers: "Trainers:"
         trainees: "Trainees:"
         name: "Name"
+      edit:
+        add_remove_sb: "Add/remove Subjects"
+        title: "Update Course"
+        btn_submit: "Save changes"
+        name: "Name"
+      new:
+        title: "New course"
+        btn_submit: "Create"
   static_pages:
     home:
       title: "Home"
@@ -122,6 +142,7 @@ en:
       fail: "Invalid email/password combination"
       message: "Account not activated.Check your email for the activation link."
     user_controller:
+      pl_login: "Please login"
       update_success: "Profile updated"
   subjects:
     create:

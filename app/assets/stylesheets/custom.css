@@ -33,3 +33,7 @@ footer {
   padding-left: 0px;
   padding-right: 100px;
 }
+
+.w3l_banner_nav_right .container {
+  padding: 25px;
+}

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user.admin? || current_user.trainer?
   end
 
   def logged_in_user
