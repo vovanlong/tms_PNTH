@@ -55,6 +55,14 @@ en:
         log_out: "Log out"
       footer:
         des: "2018 TMS for supervisors"
+    courses:
+      show:
+        tasks: "Tasks"
+        members: "Members"
+        subjects: "Subjects"
+        trainers: "Trainers:"
+        trainees: "Trainees:"
+        name: "Name"
   static_pages:
     home:
       title: "Home"

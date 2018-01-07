@@ -12,7 +12,11 @@ class User < ApplicationRecord
   has_many :courses, through: :user_courses
   before_save :downcase_email
   has_secure_password
+  enum roles: {trainee: 0, trainer: 1, admin: 2}
+
   scope :desc_created_at, ->{order(created_at: :desc)}
+  scope :alphabet, ->{order(name: :desc)}
+
   # log in - log out
   def remember
     self.remember_token = User.new_token

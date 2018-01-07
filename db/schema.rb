@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180103142750) do
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "description"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "start_at"
     t.datetime "end_at"
     t.datetime "created_at", null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20180103142750) do
     t.string "password_digest"
     t.string "reset_digest"
     t.string "remember_digest"
-    t.integer "roles"
+    t.integer "roles", default: 0
     t.string "address"
     t.string "school"
     t.datetime "created_at", null: false
