@@ -1,4 +1,9 @@
 <li>
-  <%= link_to course.name, course %> |
+  <%= link_to course.name, supervisor_course_path(course) %> |
   <%= course.created_at %>
+  <% if current_user.admin? || current_user.trainer? %>
+    <%= link_to "update", edit_supervisor_course_path(course) %> |
+    <%= link_to t("courses.index.delete"), supervisor_course_path(course),
+      method: :delete, data: {confirm: t("courses.index.confirm_delete")} %>
+  <% end %>
 </li>

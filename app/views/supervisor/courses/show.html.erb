@@ -1,0 +1,60 @@
+<% provide :title, @course.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="course_info">
+      <h1>
+        <%= @course.name %>
+      </h1>
+      <p><%= @course.description %></p>
+    </section>
+  </aside>
+</div>
+<div class="row">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home"><%= t ".subjects" %></a></li>
+    <li><a data-toggle="tab" href="#menu1"><%= t ".members" %></a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3><%= t ".subjects" %></h3>
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th><%= t ".name" %></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @subjects.each do |subject| %>
+            <tr>
+              <td><%= link_to subject.name, subject %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3><%= t ".members" %></h3>
+      <h4><%= t ".trainers" %><h4>
+      <ul>
+        <% @trainers.each do |trainer| %>
+          <li><%= link_to trainer.name, trainer %></li>
+        <% end %>
+      </ul>
+      <h4><%= t ".trainees" %></h4>
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th><%= t ".name" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @trainees.each do |trainee| %>
+            <tr>
+              <td><%= link_to trainee.name, trainee %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

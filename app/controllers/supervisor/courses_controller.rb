@@ -7,23 +7,70 @@ module Supervisor
       @courses = Course.created_desc.page(params[:page]).per_page(Settings.courses.per_page)
     end
 
-    def show; end
+    def show
+      load_subjects @course
+      load_trainers @course
+      load_trainees @course
+    end
 
-    def new; end
+    def new
+      @course = Course.new
+    end
 
-    def create; end
+    def create
+      @course = Course.new course_params
+      if @course.save
+        flash[:info] = I18n.t "courses.create.success"
+        redirect_to supervisor_courses_path
+      else
+        render :new
+      end
+    end
 
-    def update; end
+    def update
+      if @course.update_attributes course_params
+        flash[:success] = I18n.t "courses.update.success"
+        redirect_to supervisor_courses_path
+      else
+        flash[:danger] = I18n.t "courses.update.failed"
+        render :edit
+      end
+    end
 
-    def destroy; end
+    def destroy
+      if @course.destroy
+        flash[:success] = I18n.t "courses.destroy.success"
+        redirect_to supervisor_courses_path
+      else
+        flash[:success] = I18n.t "courses.destroy.failed"
+        redirect_to :back
+      end
+    end
 
     private
+
+    def course_params
+      params.require(:course).permit :name, :description, :status, :start_at, :end_at
+    end
 
     def load_course
       @course = Course.find_by id: params[:id]
       return if @course
       flash[:danger] = I18n.t "error"
       redirect_to supervisor_courses_path
+    end
+
+    def load_subjects course
+      @subjects = course.subjects
+      @all_subjects = Subject.all
+    end
+
+    def load_trainers course
+      @trainers = course.users.trainer.alphabet
+    end
+
+    def load_trainees course
+      @trainees = course.users.trainee.alphabet
     end
   end
 end
