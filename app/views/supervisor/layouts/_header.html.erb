@@ -3,6 +3,11 @@
     <div class="w3l_offers")>
       <h1> <%= link_to(t(".framgia").html_safe, root_path) %></h1>
     </div>
+    <div class="w3ls_logo_products_left1">
+      <ul class="special_items">
+        <li><%= link_to t("static_pages.home.title"), root_path %><i>/</i></li>
+      </ul>
+    </div>
     <div class="w3l_header_right1">
       <ul>
       <% if logged_in? %>
