@@ -32,6 +32,7 @@
 en:
   hello: "Hello world"
   title: "Framgia training system"
+  wrong: "Somthing went wrong!"
   layouts:
     header:
       framgia: "<span>Framgia</span> TMS"
@@ -58,6 +59,7 @@ en:
     title: "Course"
     show:
       title: "Courses"
+      view_subjects: "View subjects"
     index:
       delete: "delete"
       confirm_delete: "Are you sure?"
@@ -101,3 +103,26 @@ en:
       message: "Account not activated.Check your email for the activation link."
     user_controller:
       update_success: "Profile updated"
+  subjects:
+    create:
+      success: "Subject created"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    destroy:
+      success: "Deleted"
+    load_subject:
+      not_found: "Could not found Subject"
+    title: "Subject"
+    show:
+      title: "Subjects"
+    index:
+      update: "update"
+      delete: "delete"
+      confirm_delete: "Are you sure?"
+    new:
+      title: "New Subject"
+      btn_submit: "Create"
+    edit:
+      title: "Update Subject"
+      btn_submit: "Save changes"
