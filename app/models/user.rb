@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :school, length: {maximum: Settings.school_max_lengh}
   has_many :user_courses, dependent: :nullify
   has_many :courses, through: :user_courses
+  has_many :user_tasks, dependent: :nullify
+  has_many :tasks, through: :user_tasks
   before_save :downcase_email
   has_secure_password
   scope :desc_created_at, ->{order(created_at: :desc)}

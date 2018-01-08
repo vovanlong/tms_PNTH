@@ -1,0 +1,10 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="subject_info">
+      <% @task_user_subject.each do |x| %>
+        <h1><%= x.name %></h1>
+      <% end %>
+    </section>
+  </aside>
+</div>

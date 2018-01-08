@@ -9,6 +9,10 @@ class SubjectsController < ApplicationController
       .per_page(Settings.subjects.per_page)
   end
 
+  def show
+    @tasks = @subject.tasks
+  end
+
   def new
     @subject = Subject.new
   end
