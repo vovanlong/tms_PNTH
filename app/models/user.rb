@@ -41,9 +41,8 @@ class User < ApplicationRecord
   end
 
   def picture_size
-    return true if picture.size < Settings.picture_size.megabytes
-      errors.add(:picture, I18n.t(".Max_size_picure"))
-    end
+    return unless picture.size > Settings.picture_size.megabytes
+    errors.add(:picture, I18n.t(".Max_size_picure"))
   end
 
   class << self

@@ -59,7 +59,7 @@ class SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit :name, :description, :duration
+    params.require(:subject).permit :name, :description, :duration, :picture
   end
 
   def load_subject

@@ -1,8 +1,10 @@
 class CoursesController < ApplicationController
   before_action :load_course, except: %i(index new create)
+  before_action :load_subjects, only: %i(show)
+  before_action :load_members, only: %i(show)
 
   def index
-    @courses = Course.all.created_desc.page(params[:page])
+    @courses = current_user.courses.created_desc.page(params[:page])
       .per_page(Settings.courses.per_page)
   end
 
@@ -47,7 +49,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit :name, :description, :status, :start_at, :end_at
+    params.require(:course).permit :name, :description, :status, :start_at, :end_at, :picture
   end
 
   def load_course
@@ -55,5 +57,14 @@ class CoursesController < ApplicationController
     return if @course
     flash[:danger] = I18n.t "courses.load_course.not_found"
     redirect_to root_path
+  end
+
+  def load_subjects
+    @subjects = current_user.subjects
+  end
+
+  def load_members
+    @trainers = @course.users.trainer.alphabet
+    @trainees = @course.users.trainee.alphabet
   end
 end

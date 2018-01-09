@@ -3,10 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
   before_action :find_user, only: %i(show)
 
-  def index
-    @users = User.desc_created_at.paginate page: params[:page], per_page: Settings.per_page
-  end
-
   def show
     @courses = current_user.courses.created_desc
   end
