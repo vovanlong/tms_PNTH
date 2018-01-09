@@ -146,3 +146,22 @@ en:
     edit:
       title: "Update Subject"
       btn_submit: "Save changes"
+  tasks:
+    create:
+      success: "Subject created"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    show:
+      title: "Subjects"
+    index:
+      title: "Index"
+      update: "update"
+      delete: "delete"
+      confirm_delete: "Are you sure?"
+    new:
+      title: "New Subject"
+      btn_submit: "Create"
+    edit:
+      title: "Update Subject"
+      btn_submit: "Save changes"
