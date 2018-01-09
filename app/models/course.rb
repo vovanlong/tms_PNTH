@@ -43,4 +43,12 @@ class Course < ApplicationRecord
       end
     end
   end
+
+  def start_sb subject
+    course_subjects.with_subject(subject).started!
+  end
+
+  def stop_sb subject
+    course_subjects.with_subject(subject).stopped!
+  end
 end

@@ -1,5 +1,5 @@
 <tr>
-  <td><%= picture_for course %></td>
+  <td><%= image_tag course.picture, class: "img-circle" %></td>
   <td>
     <%= link_to course.name, supervisor_course_path(course) %>
   </td>

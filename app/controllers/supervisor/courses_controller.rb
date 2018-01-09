@@ -10,6 +10,7 @@ module Supervisor
     end
 
     def show
+      load_course_sb @course
       load_subjects @course
       load_trainers @course
       load_trainees @course
@@ -57,6 +58,12 @@ module Supervisor
 
     def course_params
       params.require(:course).permit :name, :description, :status, :start_at, :end_at, :picture
+    end
+
+    def load_course_sb course
+      @course_subjects = course.course_subjects.includes(:subject)
+      return if @course_subjects
+      flash[:danger] = t "controllers.courses.show.no_subject"
     end
 
     def load_course
