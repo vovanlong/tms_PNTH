@@ -57,10 +57,18 @@ en:
       footer:
         des: "2018 TMS for supervisors"
     courses:
+      course:
+        update: "update"
+      update_status:
+        success: "Course started!"
       form:
         init: "initialize"
         in_progress: "in progress"
-        finish: "finished"
+        finished: "finished"
+      start_stop_form:
+        btn_submit: "start"
+      stop_form:
+        btn_submit: "stop"
       add_subject:
         name: "Name"
         option: "Option"
@@ -83,6 +91,7 @@ en:
         trainers: "Trainers:"
         trainees: "Trainees:"
       edit:
+        status: "Status: "
         trainers: "Trainers:"
         trainees: "Trainees:"
         name: "Name"
@@ -164,8 +173,6 @@ en:
       activities: "Activities"
       profile: "Profile"
       progress: "Progress"
-
-
   shared:
     error_messages:
       content: "The form contains %{error_messages}"
@@ -237,3 +244,6 @@ en:
     edit:
       title: "Update Subject"
       btn_submit: "Save changes"
+  helpers:
+    courses:
+      stoped: "Course stopped"

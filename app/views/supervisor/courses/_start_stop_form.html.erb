@@ -1,0 +1,11 @@
+<% if @course.init? %>
+  <%= form_for [:supervisor, @course], class: "form-group" do |f| %>
+    <%= f.hidden_field :status, value: "in_progress" %>
+
+    <%= f.submit t(".btn_submit"), class: "btn btn-success" %>
+  <% end %>
+<% elsif @course.in_progress? %>
+  <%= render partial: "stop_form", object: @course %>
+<% else %>
+  <h3><% t "supervisor.courses.form.finished" %></h3>
+<% end %>

@@ -1,7 +1,16 @@
 <% provide :title, t("courses.title") %>
 <h1><% t ".title" %></h1>
-<%= will_paginate %>
-<ul class="courses">
-  <%= render @courses %>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th><%= t".name" %></th>
+      <th><%= t".duration" %></th>
+      <th><%= t".option" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @courses %>
+  </tbody>
+</table>
 <%= will_paginate %>

@@ -37,3 +37,24 @@ footer {
 .w3l_banner_nav_right .container {
   padding: 25px;
 }
+
+.container .start-stop-course .btn {
+  float:right;
+}
+
+.start-stop-course p {
+  display: block;
+  float:left;
+}
+
+.start-stop-course .init p {
+  background-color: yellow;
+}
+
+.start-stop-course .in_progress p {
+  background-color: green;
+}
+
+.start-stop-course .finished p {
+  background-color: red;
+}

@@ -36,11 +36,10 @@ module Supervisor
 
     def update
       if @course.update_attributes course_params
+        start @course if @course.in_progress?
         flash[:success] = I18n.t "courses.update.success"
-        redirect_to supervisor_courses_path
       else
         flash[:danger] = I18n.t "courses.update.failed"
-        render :edit
       end
     end
 
@@ -57,7 +56,7 @@ module Supervisor
     private
 
     def course_params
-      params.require(:course).permit :name, :description, :status, :start_at, :end_at
+      params.require(:course).permit :name, :description, :status, :start_at, :end_at, :picture
     end
 
     def load_course
