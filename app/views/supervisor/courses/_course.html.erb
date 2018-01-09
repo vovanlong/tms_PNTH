@@ -1,11 +1,14 @@
 <tr>
   <td><%= image_tag course.picture, class: "img-circle" %></td>
+  <td><%= link_to course.name, supervisor_course_path(course) %></td>
   <td>
-    <%= link_to course.name, supervisor_course_path(course) %>
+    <div class="start-stop-course">
+      <div class="<%= course.status %>">
+        <p class="badge"><%= course.status %></p>
+      </div>
+    </div>
   </td>
-  <td>
-    <%= course.created_at %>
-  </td>
+  <td><%= course.start_at %> / <%= course.end_at %></td>
   <td>
     <% if current_user.admin? || current_user.trainer? %>
       <%= link_to t(".update"), edit_supervisor_course_path(course) %> |

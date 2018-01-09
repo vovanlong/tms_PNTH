@@ -60,6 +60,10 @@ en:
       course:
         update: "update"
       button:
+        start_subject:
+          btn_submit: "start"
+        stop_subject:
+          btn_submit: "stop"
         add_trainer:
           failed: "Failed to add user!"
           btn_submit:
@@ -70,10 +74,6 @@ en:
         remove_user:
           failed: "Failed to remove user"
           btn_submit: "remove"
-      start_subject:
-        btn_submit: "start"
-      stop_subject:
-        btn_submit: "stop"
       update_status:
         success: "success"
         failed_update: "Failed to update status"
@@ -99,7 +99,14 @@ en:
       remove_subject:
         btn_submit: "remove"
       index:
+        status: "Status"
+        start_end: "Start/ End at"
+        init: "Initializing: %{init}"
+        in_progress: "In progress: %{in_progress}"
+        finished: "Finished: %{finished}"
+        total: "Total Courses: %{total}"
         title: "Manage Courses"
+        new_course: "Create new course"
       show:
         edit: "Edit Course"
         tasks: "Tasks"

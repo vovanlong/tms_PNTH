@@ -23,7 +23,7 @@ module Supervisor
     def create
       @course = Course.new course_params
       if @course.save
-        flash[:info] = I18n.t "courses.create.success"
+        flash[:info] = t "courses.create.success"
         redirect_to supervisor_courses_path
       else
         render :new
@@ -38,19 +38,20 @@ module Supervisor
     def update
       if @course.update_attributes course_params
         start @course if @course.in_progress?
-        flash[:success] = I18n.t "courses.update.success"
+        flash[:success] = t "courses.update.success"
       else
-        flash[:danger] = I18n.t "courses.update.failed"
+        flash[:danger] = t "courses.update.failed"
       end
+      render :edit
     end
 
     def destroy
       if @course.destroy
-        flash[:success] = I18n.t "courses.destroy.success"
+        flash[:success] = t "courses.destroy.success"
         redirect_to supervisor_courses_path
       else
-        flash[:success] = I18n.t "courses.destroy.failed"
-        redirect_to :back
+        flash[:success] = t "courses.destroy.failed"
+        redirect_back fallback_location: root_path
       end
     end
 
@@ -69,7 +70,7 @@ module Supervisor
     def load_course
       @course = Course.find_by id: params[:id]
       return if @course
-      flash[:danger] = I18n.t "error"
+      flash[:danger] = t "error"
       redirect_to supervisor_courses_path
     end
 

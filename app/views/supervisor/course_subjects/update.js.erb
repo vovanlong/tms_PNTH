@@ -1,0 +1,13 @@
+if(<%= @cou_subject.init? || @cou_subject.stopped? %>){
+  $('#edit_course_subject_<%= @cou_subject.id %>').parent().html('<%= j(render('supervisor/courses/button/start_subject', object: @cou_subject)) %>');
+  showAlert(I18n.t("alert.stopped"));
+}
+else{
+  $('#edit_course_subject_<%= @cou_subject.id %>').parent().html('<%= j(render('supervisor/courses/button/stop_subject', object: @cou_subject)) %>');
+  showAlert(I18n.t("alert.started"));
+}
+
+function showAlert(message){
+  $('.alert-popup').html(message);
+  $('.alert-popup').show().fadeIn().delay(3000).fadeOut();
+}

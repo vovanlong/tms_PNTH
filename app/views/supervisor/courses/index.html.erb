@@ -1,11 +1,23 @@
 <% provide :title, t("courses.title") %>
-<h1><% t ".title" %></h1>
+<div class="col-md-4">
+  <div class="course-info">
+    <h1><%= t ".title" %></h1>
+    <h5><span class="badge"><%= t(".total", total: Course.total_size) %></span></h5>
+    <h5><span class="badge badge-warning"><%= t(".init", init: Course.total_init_size) %></h5>
+    <h5><span class="badge badge-success"><%= t(".in_progress", in_progress: Course.total_in_progress_size) %></h5>
+    <h5><span class="badge badge-danger"><%= t(".finished", finished: Course.total_finished_size) %></h5>
+  </div>
+</div>
+<div class="col-md-8 btn-new-course">
+  <%= link_to t(".new_course"), new_supervisor_course_path, class: "btn btn-success" %>
+</div>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
       <th><%= t".name" %></th>
-      <th><%= t".duration" %></th>
+      <th><%= t".status" %></th>
+      <th><%= t".start_end" %></th>
       <th><%= t".option" %></th>
     </tr>
   </thead>

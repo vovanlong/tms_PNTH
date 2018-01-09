@@ -245,3 +245,11 @@ footer {
 .finish-subject p {
   float: right;
 }
+
+.course-info {
+  padding: 15px;
+}
+
+.btn-new-course {
+  padding: 20px;
+}

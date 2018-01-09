@@ -13,12 +13,16 @@ class SessionsController < ApplicationController
   def action_success
     log_in @user
     params[:session][:remember_me] == Settings.check_remember ? remember(@user) : forget(@user)
-    flash[:success] = I18n.t "controllers.sessions_controller.success"
-    redirect_to @user
+    flash[:success] = t "controllers.sessions_controller.success"
+    if current_user.admin? || current_user.trainer?
+      redirect_to supervisor_courses_path
+    else
+      redirect_to @user
+    end
   end
 
   def action_fail
-    flash.now[:danger] = I18n.t "controllers.sessions_controller.fail"
+    flash.now[:danger] = t "controllers.sessions_controller.fail"
     render :new
   end
 
