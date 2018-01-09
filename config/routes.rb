@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   end
   resources :tasks
   resources :user_courses, only: %i(update)
+  resources :subjects
+  resources :user_tasks, only: %i(new create update)
 end
