@@ -40,11 +40,10 @@ module Supervisor
     def destroy
       if @user.destroy
         flash[:success] = t "courses.destroy.success"
-        redirect_back fallback_location: supervisor_users_path
       else
         flash[:success] = t "courses.destroy.failed"
-        redirect_back fallback_location: supervisor_users_path
       end
+      redirect_back fallback_location: supervisor_users_path
     end
 
     private

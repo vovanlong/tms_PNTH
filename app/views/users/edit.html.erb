@@ -1,12 +1,8 @@
 <% provide :title,t(".title")  %>
-<% provide :button_text, t(".button") %>
-<div class="row">
-  <div class="col-md-6">
-    <div class="w3_login_module">
-      <div class="module form-module">
-        <h1><center><%= t".str" %></center></h1>
-        <%= render "form" %>
-      </div>
-    </div>
+<% provide :button_text, t(".title") %>
+<div class="w3_login_module ">
+  <div class="module form-module">
+    <h1><center><%= t".str" %></center></h1>
+    <%= render "form" %>
   </div>
 </div>

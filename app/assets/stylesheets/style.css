@@ -866,7 +866,9 @@ button.submit.check_out{
 /*-- //cart --*/
 .column div.agile_top_brand_left_grid {
 	position: relative;
-	margin:0;
+    margin-top: 10px;
+    border: solid black 1px;
+    border-radius: 5px;
 }
 .agile_top_brand_left_grid figure {
 	margin: 0;
@@ -4826,7 +4828,27 @@ input.checkbox:checked:after {
   @include box_sizing;
 }
 
-
 .typo, .privacy, .faq, .services, .events, .mail, .agileinfo_single, .w3_login {
     padding: 1em;
+}
+
+.w3l_header_right1 li{
+  list-style-type: none;
+}
+
+.img-circle{
+  margin: 0px 0px 10px 10px;
+}
+
+
+.sidebar-design{
+  padding: 10px;
+  border: 10px solid #ffffff;
+  border-radius: 8px;
+}
+
+.sidebar-design li{
+  padding-left: 20px;
+  font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #0a0808;
 }
