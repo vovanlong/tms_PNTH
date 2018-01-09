@@ -2,6 +2,8 @@ module Supervisor
   class CoursesController < ApplicationController
     layout "supervisor_layout"
     before_action :load_course, except: %i(index new create)
+    before_action :logged_in_user
+    before_action :admin_user
 
     def index
       @courses = Course.created_desc.page(params[:page]).per_page(Settings.courses.per_page)
@@ -25,6 +27,10 @@ module Supervisor
       else
         render :new
       end
+    end
+
+    def edit
+      load_subjects @course
     end
 
     def update

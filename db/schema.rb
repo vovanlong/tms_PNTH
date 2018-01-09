@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20180103142750) do
 
   create_table "course_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "deadline"
+    t.date "deadline"
     t.bigint "course_id"
     t.bigint "subject_id"
     t.datetime "created_at", null: false

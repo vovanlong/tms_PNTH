@@ -8,6 +8,9 @@
       <p><%= @course.description %></p>
     </section>
   </aside>
+  <div class="col-md-4">
+    <%= link_to t(".edit"), edit_supervisor_course_path(@course), class: "btn btn-info" %>
+  </div>
 </div>
 <div class="row">
   <ul class="nav nav-tabs">
