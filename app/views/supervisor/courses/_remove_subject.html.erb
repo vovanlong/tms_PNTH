@@ -1,0 +1,7 @@
+<%= form_for([:supervisor, load_subject_form(@course, @subject)],
+  html: {method: :delete}, remote: true) do |f| %>
+  <%= hidden_field_tag :subject_id, @subject.id %>
+  <%= hidden_field_tag :course_id, @course.id %>
+
+  <%= f.submit t(".btn_submit"), class: "btn" %>
+<% end %>

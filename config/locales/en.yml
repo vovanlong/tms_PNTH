@@ -62,6 +62,8 @@ en:
         in_progress: "in progress"
         finish: "finished"
       add_subject:
+        name: "Name"
+        option: "Option"
         duration: "duration:"
         btn_submit: "add"
       remove_subject:
@@ -77,6 +79,7 @@ en:
         trainees: "Trainees:"
         name: "Name"
       edit:
+        add_members: "Add members"
         add_remove_sb: "Add/remove Subjects"
         title: "Update Course"
         btn_submit: "Save changes"
