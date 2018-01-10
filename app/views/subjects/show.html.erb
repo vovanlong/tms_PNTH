@@ -11,6 +11,11 @@
           <li class="list-group-item"><%= task.name %><br></li>
         <% end %>
       </ul>
+      <p><%= @subject.description %></p>
+      <% @tasks.each do |x| %>
+        <p><%= x.name %></p>
+        <p><%= x.description %></p>
+      <% end %>
     </section>
   </aside>
 </div>

@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   before_action :load_task, only: %i(edit update)
 
   def index
-    # hien thi cac tasks cua user ung voi moi subject,em tam thoi de day roi se phan quyen sau
     @task_user_subject = current_user.tasks.get_task(params[:subject_id])
   end
 

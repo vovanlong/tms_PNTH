@@ -8,13 +8,18 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.name_max_lengh}
   validates :address, length: {maximum: Settings.address_max_lengh}
   validates :school, length: {maximum: Settings.school_max_lengh}
+  validate  :picture_size
   has_many :user_courses, dependent: :nullify
   has_many :courses, through: :user_courses
   has_many :user_tasks, dependent: :nullify
   has_many :tasks, through: :user_tasks
+  has_many :user_subjects, dependent: :nullify
+  has_many :subjects, through: :user_subjects
   before_save :downcase_email
   has_secure_password
   enum roles: {trainee: 0, trainer: 1, admin: 2}
+
+  mount_uploader :picture, PictureUploader
 
   scope :desc_created_at, ->{order(created_at: :desc)}
   scope :alphabet, ->{order(name: :desc)}
@@ -33,6 +38,12 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  def picture_size
+    return true if picture.size < Settings.picture_size.megabytes
+      errors.add(:picture, I18n.t(".Max_size_picure"))
+    end
   end
 
   class << self
