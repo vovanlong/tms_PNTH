@@ -16,6 +16,7 @@
     </ul>
     <div class="tab-content">
       <div id="home" class="tab-pane active">
+        <h3><%= t ".add_remove_sb" %></h3>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -28,14 +29,35 @@
             <%= render partial: "add_subject", collection: @all_subjects, as: :subject %>
           </tbody>
         </table>
-        <h3><%= t ".add_remove_sb" %></h3>
-        <ul>
-        </ul>
       </div>
       <div id="menu1" class="tab-pane fade">
         <%= t ".add_members" %>
-        <ul>
-        </ul>
+        <table class="table table-bordered">
+          <h3><%= t ".trainers" %></h3>
+          <thead>
+            <tr>
+              <th><%= t".name" %></th>
+              <th><%= t".email" %></th>
+              <th><%= t".option" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "add_trainer", collection: @trainers, as: :trainer %>
+          </tbody>
+        </table>
+        <table class="table table-bordered">
+          <h3><%= t ".trainees" %></h3>
+          <thead>
+            <tr>
+              <th><%= t".name" %></th>
+              <th><%= t".email" %></th>
+              <th><%= t".option" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "add_trainee", collection: @trainees, as: :trainee %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

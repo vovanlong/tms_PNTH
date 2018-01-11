@@ -4,6 +4,7 @@ class Course < ApplicationRecord
   has_many :users, through: :user_courses
   has_many :subjects, through: :course_subjects
   has_many :having_sb, through: :course_subjects, source: :subject
+  has_many :having_user, through: :user_courses, source: :user
   validates :name, presence: true
   validates :description, presence: true
   validate  :picture_size
@@ -24,5 +25,13 @@ class Course < ApplicationRecord
 
   def remove_sb subject
     having_sb.delete subject
+  end
+
+  def assign_user user
+    user_courses.create(user_id: user.id)
+  end
+
+  def remove_user user
+    having_user.delete user
   end
 end

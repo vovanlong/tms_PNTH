@@ -31,6 +31,7 @@ module Supervisor
 
     def edit
       load_subjects @course
+      load_all_users
     end
 
     def update
@@ -77,6 +78,11 @@ module Supervisor
 
     def load_trainees course
       @trainees = course.users.trainee.alphabet
+    end
+
+    def load_all_users
+      @trainers = User.trainer.alphabet
+      @trainees = User.trainee.alphabet
     end
   end
 end
