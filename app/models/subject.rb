@@ -7,5 +7,13 @@ class Subject < ApplicationRecord
     uniqueness: {case_sensitive: false}, allow_nil: true
   validates :description, presence: true,
     length: {minimum: Settings.subjects.des_min_len}
+  validate  :picture_size
+
   scope :created_desc, ->{order(created_at: :desc)}
+  mount_uploader :picture, PictureUploader
+
+  def picture_size
+    return unless picture.size > Settings.picture_size.megabytes
+    errors.add(:picture, I18n.t(".Max_size_picure"))
+  end
 end

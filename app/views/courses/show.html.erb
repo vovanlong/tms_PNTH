@@ -1,12 +1,60 @@
 <% provide :title, @course.name %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12">
     <section class="course_info">
       <h1>
         <%= @course.name %>
       </h1>
       <p><%= @course.description %></p>
-      <%= link_to t(".view_subjects"), [@course, :subjects] %>
     </section>
   </aside>
 </div>
+<div class="col-md-12 agileinfo_mail_grid_right">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#subject">
+      <%= t".subject" %></a></li>
+    <li><a data-toggle="tab" href="#task"><%= t".task" %></a></li>
+    <li><a data-toggle="tab" href="#member"><%= t".member" %></a></li>
+    <li><a data-toggle="tab" href="#document"><%= t".document" %></a></li>
+  </ul>
+  <div class="tab-content">
+  <div id="subject" class="tab-pane fade in active">
+    <div class="w3ls_w3l_banner_nav_right_grid ">
+      <div class="hover14 column">
+      <%= render partial: "subject", collection: @subjects, as: :subject %>
+      </div>
+    </div>
+</div>
+  <div id="member" class="tab-pane fade">
+    <div class="container">
+      <table class="table">
+        <h2><%= t".trainers" %></h2>
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= t".name" %></th>
+            <th><%= t".email" %></th>
+          </tr>
+        </thead>
+          <tbody>
+          <%= render partial: "trainers", collection: @trainers, as: :trainer %>
+          </tbody>
+        </table>
+        <table class="table">
+        <h2><%= t".trainees" %></h2>
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= t".name" %></th>
+            <th><%= t".email" %></th>
+          </tr>
+        </thead>
+          <tbody>
+          <%= render partial: "trainees", collection: @trainees, as: :trainee %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"> </div>

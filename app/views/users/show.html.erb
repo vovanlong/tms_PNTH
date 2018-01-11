@@ -1,9 +1,7 @@
 <div class="mail">
   <div class="agileinfo_mail_grids">
     <div class="col-sm-4">
-      <% if @user.picture? %>
-       <%= image_tag @user.picture.url, class: "img-thumbnail", alt: "Cinque Terre" %>
-      <% end %>
+      <%= gravatar_for @user %>
       <ul>
         <li><%= t".name" %><h2><span><%= @user.name %></span></h2></li>
       </ul>
@@ -17,14 +15,14 @@
         <li><%= t".school" %><h2><span><%= @user.school %></span></h2></li>
       </ul>
       <ul>
-        <li><button type="button" class="btn btn-primary"><%= link_to t(".edit"),
-        edit_user_path(@user) %></button></li>
+        <li><button type="button" class="btn btn-primary">
+          <%= link_to t(".edit"), edit_user_path(@user) %></button></li>
       </ul>
     </div>
-
     <div class="col-md-8 agileinfo_mail_grid_right">
       <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#home"><%= t"timeline." %></a></li>
+      <li class="active"><a data-toggle="tab" href="#home">
+        <%= t"timeline." %></a></li>
       <li><a data-toggle="tab" href="#activities"><%= t".activities" %></a></li>
       <li><a data-toggle="tab" href="#profile"><%= t".profile" %></a></li>
       <li><a data-toggle="tab" href="#progress"><%= t".progress" %></a></li>
@@ -41,21 +39,8 @@
                     <div class="snipcart-item block">
                       <% course.subjects.each do |subject| %>
                         <%= subject.name %><br>
-                          <div class="snipcart-details">
-                          <% Task.get_task(subject.id).each do |task| %>
-                            <table class="table table-striped">
-                            <thead>
-                              <tr><th><%= task.name %></th>
-                              <th><center><% if get_user_task(params[:id], task.id).blank? %>
-                                <span class="label label-primary"><%= t".init" %></span>
-                              <% elsif get_user_task(params[:id], task.id).done? %>
-                                <span class="label label-danger"><%= t".finished" %></span>
-                              <% else get_user_task(params[:id], task.id).doing? %>
-                                <span class="label label-success"><%= t".in_progress" %></span>
-                              <% end %></center></th>
-                            </tr>
-                          <% end %>
-                        </div>
+                        <%= render partial: "task", collection:
+                          Task.get_task(subject.id), as: :task %>
                       <% end %>
                     </div>
                   </figure>

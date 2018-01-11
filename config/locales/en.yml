@@ -77,7 +77,6 @@ en:
         subjects: "Subjects"
         trainers: "Trainers:"
         trainees: "Trainees:"
-        name: "Name"
       edit:
         add_members: "Add members"
         add_remove_sb: "Add/remove Subjects"
@@ -104,9 +103,21 @@ en:
     show:
       title: "Courses"
       view_subjects: "View subjects"
+      subject: "Subjects"
+      task: "Tasks"
+      member: "Members"
+      document: "Documents"
+      alltime: " - %{time} days"
+      trainers: "Trainers:"
+      trainees: "Trainees:"
+      name: "Name"
+      email: "Email"
+      view_content: "View content"
     index:
       delete: "delete"
       confirm_delete: "Are you sure?"
+      in_progress: "In Progress"
+      finished: "Finished"
     new:
       title: "New Course"
       btn_submit: "Create"
