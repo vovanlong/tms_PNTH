@@ -1,6 +1,10 @@
 <nav class="navbar nav_bottom">
   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
     <ul class="nav navbar-nav nav_1">
+      <li>
+        <%= link_to (image_tag current_user.picture, class: "img-mini-avatar"), current_user %>
+        <%= link_to current_user.name, current_user %>
+      </li>
       <li><%= link_to t("static_pages.home.title"), root_path %></a></li>
       <% if logged_in? %>
       <li><%= link_to t("courses.title"), courses_path %></a></li>
