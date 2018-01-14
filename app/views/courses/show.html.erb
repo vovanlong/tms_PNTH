@@ -1,12 +1,18 @@
 <% provide :title, @course.name %>
 <div class="row">
-  <aside class="col-md-12">
+  <aside class="col-md-8">
     <section class="course_info">
       <h1>
         <%= @course.name %>
       </h1>
+      <div class="user-course-status">
+        <span class="<%= @user_course.status %>"><%= @user_course.status %></span>
+      </div>
       <p><%= @course.description %></p>
     </section>
+  </aside>
+  <aside class="col-md-4">
+    <%= render "start_finish_course" %>
   </aside>
 </div>
 <div class="col-md-12 agileinfo_mail_grid_right">
@@ -21,7 +27,11 @@
   <div id="subject" class="tab-pane fade in active">
     <div class="w3ls_w3l_banner_nav_right_grid ">
       <div class="hover14 column">
-      <%= render partial: "subject", collection: @subjects, as: :subject %>
+        <div class="agile_top_brand_left_grid">
+          <ul>
+            <%= render partial: "course_subjects", collection: @course_subjects, as: :course_subject %>
+          </ul>
+        </div>
       </div>
     </div>
 </div>

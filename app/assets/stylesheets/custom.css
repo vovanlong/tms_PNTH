@@ -58,3 +58,122 @@ footer {
 .start-stop-course .finished p {
   background-color: red;
 }
+
+.img-mini-avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.img-circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.subject-img-circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* user-course-status */
+.user-course-status .joined {
+  background-color: yellow;
+}
+
+.user-course-status .in_progress {
+  background-color: green;
+}
+
+.user-course-status .finished {
+  background-color: red;
+}
+
+.agile_top_brand_left_grid li {
+  list-style: none;
+  padding-bottom: 30px;
+}
+
+.agile_top_brand_left_grid .start-date {
+  background-color: green;
+}
+
+.agile_top_brand_left_grid .end-date {
+  background-color: red;
+}
+
+.show-subject {
+  padding-left: 100px;
+}
+
+.subject-border {
+  background-color: #f4f6f9;
+  border-radius: 15px 15px;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.subject-border:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.start-date {
+  float: left;
+  background-color: green;
+  border-radius: 5px 5px;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.end-date {
+  float: left;
+  background-color: red;
+  border-radius: 5px 5px;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.content {
+  width: 95%;
+  float: right;
+}
+
+.item {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #ebebeb;
+  width: 32%;
+  background: #fff;
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-top: 0px; }
+
+.item img {
+  max-width: 100%;
+}
+
+.item a {
+  color: #000;
+}
+
+.item a:hover {
+  color: #95d6fa;
+}
+
+.item li {
+  position: relative;
+  background: #fff;
+  list-style-type: none;
+  text-align: left;
+  margin-left: -35px;
+}
+
+.item li:nth-child(1) {
+  font-weight: bold;
+}
+
+.item:nth-child(3n+1) {
+  clear: left;
+}

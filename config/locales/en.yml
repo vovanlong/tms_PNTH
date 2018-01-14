@@ -109,6 +109,15 @@ en:
     home:
       title: "Home"
   courses:
+    start_finish_course:
+      finished: "Finished"
+    course_subjects:
+      alltime: " - %{time} days"
+    button:
+      start_course:
+        btn_submit: "start study"
+      finish_course:
+        btn_submit: "finish"
     create:
       success: "Course created"
     update:
@@ -120,13 +129,13 @@ en:
       not_found: "Could not found course"
     title: "Course"
     show:
+      btn_receive_course: "start study"
       title: "Courses"
       view_subjects: "View subjects"
       subject: "Subjects"
       task: "Tasks"
       member: "Members"
       document: "Documents"
-      alltime: " - %{time} days"
       trainers: "Trainers:"
       trainees: "Trainees:"
       name: "Name"
@@ -174,10 +183,18 @@ en:
       profile: "Profile"
       progress: "Progress"
   shared:
+    sidebar:
+      show_user: "%{avatar} %{name}"
     error_messages:
       content: "The form contains %{error_messages}"
       messages: "error"
   controllers:
+    courses:
+      show:
+        has_no_course: "You have no courses"
+    user_courses:
+      update:
+        failed: "Update failed"
     sessions_controller:
       success: "Login success"
       fail: "Invalid email/password combination"

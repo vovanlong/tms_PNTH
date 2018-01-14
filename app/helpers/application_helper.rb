@@ -8,11 +8,7 @@ module ApplicationHelper
     end
   end
 
-  def picture_for course
-    if course.picture?
-      image_tag(course.picture.url, alt: course.name, class: "img-thumbnail")
-    else
-      image_tag("/assets/default.png", alt: course.name, class: "img-thumbnail")
-    end
+  def start_date course_subject
+    course_subject.deadline - course_subject.subject.duration.days
   end
 end
