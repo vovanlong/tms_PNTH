@@ -1,0 +1,19 @@
+<div class="col-sm-4" id="show-user-supervisor">
+  <%= picture_for @user %>
+  <ul>
+    <li><%= t".name" %><h2><span><%= @user.name %></span></h2></li>
+  </ul>
+  <ul>
+    <li><%= t".email" %><h2><span><%= @user.email %></span></h2></li>
+  </ul>
+  <ul>
+    <li><%= t".address" %><h2><span><%= @user.address %></span></h2></li>
+  </ul>
+  <ul>
+    <li><%= t".school" %><h2><span><%= @user.school %></span></h2></li>
+  </ul>
+  <ul>
+    <li><button type="button" class="btn btn-primary">
+      <%= link_to t(".edit"), edit_supervisor_user_path(@user) %></button></li>
+  </ul>
+</div>

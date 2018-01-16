@@ -57,6 +57,11 @@ footer {
 
 .start-stop-course .finished p {
   background-color: red;
+.form_user_manager{
+  background-color: #d9ffcc;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .img-mini-avatar {

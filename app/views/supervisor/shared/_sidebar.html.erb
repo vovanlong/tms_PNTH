@@ -1,10 +1,9 @@
 <nav class="navbar nav_bottom">
   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
     <ul class="nav navbar-nav nav_1">
-      <li><%= link_to t("static_pages.home.title"), root_path %></a></li>
       <li><%= link_to t("courses.title"), supervisor_courses_path %></a></li>
       <% if logged_in? %>
-        <li><%= link_to t(".users"), users_path %></li>
+        <li><%= link_to t(".users"), supervisor_users_path %></li>
       <% end %>
     </ul>
   </div>

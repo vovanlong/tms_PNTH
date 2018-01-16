@@ -91,8 +91,6 @@ en:
         trainers: "Trainers:"
         trainees: "Trainees:"
       edit:
-        status: "Status: "
-        trainers: "Trainers:"
         trainees: "Trainees:"
         name: "Name"
         email: "Email"
@@ -105,6 +103,25 @@ en:
       new:
         title: "New course"
         btn_submit: "Create"
+    users:
+      index:
+        title: "Index"
+        all: "All User"
+        delete: "delete"
+        confirm_delete: "Are you sure?"
+        in_progress: "In Progress"
+        finished: "Finished"
+      new:
+        title: "Create User"
+        button_text: "Create"
+      show:
+        edit: "Edit"
+      edit:
+        title: "Edit"
+        str: "Edit"
+      form:
+        button_text: "Edit"
+
   static_pages:
     home:
       title: "Home"
@@ -141,6 +158,8 @@ en:
       name: "Name"
       email: "Email"
       view_content: "View content"
+    subject:
+      alltime: " - %{time} days"
     index:
       delete: "delete"
       confirm_delete: "Are you sure?"
