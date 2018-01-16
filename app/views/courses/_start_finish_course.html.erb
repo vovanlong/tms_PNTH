@@ -1,0 +1,7 @@
+<% if @user_course.joined? %>
+  <%= render partial: "courses/button/start_course", object: @user_course %>
+<% elsif @user_course.in_progress? %>
+  <%= render partial: "courses/button/finish_course", object: @user_course %>
+<% else %>
+  <h3><%= t ".finished" %></h3>
+<% end %>

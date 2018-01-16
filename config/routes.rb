@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     resources :user_courses, only: %i(create update destroy)
   end
   resources :tasks
+  resources :user_courses, only: %i(update)
 end

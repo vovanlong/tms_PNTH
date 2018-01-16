@@ -1,0 +1,26 @@
+<li>
+  <div class="subject-border border">
+    <span class="start-date">
+      <%= start_date course_subject %>
+    </span>
+    <div class="show-subject">
+      <%= image_tag course_subject.subject_picture.url, class: "subject-img-circle" %>
+      <%= link_to course_subject.subject_name, [course_subject.course, course_subject.subject] %>
+      <%= t(".alltime", time: course_subject.subject_duration) %>
+      <div class="agile_top_brand_left_grid1">
+        <figure>
+          <button type="button" class="btn btn-info" data-toggle="collapse"
+            data-target="#view_detail"><% t".view_content" %></button>
+          <div id="view_detail" class="collapse">
+            <div class="snipcart-item block">
+              <%= course_subject.subject_description %>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+    <span class="end-date">
+      <%= course_subject.deadline %>
+    </span>
+  </div>
+</li>

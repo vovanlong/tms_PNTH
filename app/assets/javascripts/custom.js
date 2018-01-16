@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("turbolinks:load", function() {
   $('.dropdown').hover(
     function() {
       $('.dropdown-menu', this).stop( true, true ).slideDown('fast');
