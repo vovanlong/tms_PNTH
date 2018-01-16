@@ -11,7 +11,7 @@ class Course < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   scope :created_desc, ->{order(created_at: :desc)}
-  enum status: {init: 0, in_progress: 1, finish: 2}
+  enum status: {init: 0, in_progress: 1, finished: 2}
 
   def picture_size
     return unless picture.size > Settings.picture_size.megabytes
@@ -33,5 +33,14 @@ class Course < ApplicationRecord
 
   def remove_user user
     having_user.delete user
+  end
+
+  def start users, subjects
+    users.transaction do
+      users.each do |user|
+        raise ActiveRecord::Rollback if user.nil?
+        user.add_subjects subjects
+      end
+    end
   end
 end

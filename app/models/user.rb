@@ -45,6 +45,15 @@ class User < ApplicationRecord
     errors.add(:picture, I18n.t(".Max_size_picure"))
   end
 
+  def add_subjects subjects
+    subjects.transaction do
+      subjects.each do |subject|
+        raise ActiveRecord::Rollback if subject.nil?
+        user_subjects.create!(subject_id: subject.id)
+      end
+    end
+  end
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

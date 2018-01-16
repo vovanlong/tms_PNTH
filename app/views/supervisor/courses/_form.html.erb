@@ -7,15 +7,18 @@
   <%= f.label :description %>
   <%= f.text_field :description, class: "form-control" %>
 
-  <%= f.label :status %>
-  <%= select "course", "status", Course.statuses.map {|name, index|
-    [t(".#{name}"),name]}, html: {class: "form-control"} %></br>
-
   <%= f.label :start_at %>
   <%= f.date_field :start_at, class: "form-control" %>
 
   <%= f.label :end_at %>
   <%= f.date_field :end_at, class: "form-control" %>
+
+  <%= f.label :picture %>
+  <%= image_tag @course.picture %>
+
+  <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
