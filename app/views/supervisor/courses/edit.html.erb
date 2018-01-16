@@ -71,5 +71,56 @@
           </div>
         </div>
       <% end %>
+<% if @course.init? %>
+  <div class="col-md-8 add-remove-subject">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home"><%= t ".add_remove_sb" %></a></li>
+      <li><a data-toggle="tab" href="#menu1"><%= t ".add_members" %></a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="home" class="tab-pane active">
+        <h3><%= t ".add_remove_sb" %></h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><%= t".name" %></th>
+              <th><%= t".duration" %></th>
+              <th><%= t".option" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "add_subject", collection: @all_subjects, as: :subject %>
+          </tbody>
+        </table>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <%= t ".add_members" %>
+        <table class="table table-bordered">
+          <h3><%= t ".trainers" %></h3>
+          <thead>
+            <tr>
+              <th><%= t".name" %></th>
+              <th><%= t".email" %></th>
+              <th><%= t".option" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "add_trainer", collection: @trainers, as: :trainer %>
+          </tbody>
+        </table>
+        <table class="table table-bordered">
+          <h3><%= t ".trainees" %></h3>
+          <thead>
+            <tr>
+              <th><%= t".name" %></th>
+              <th><%= t".email" %></th>
+              <th><%= t".option" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "add_trainee", collection: @trainees, as: :trainee %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
