@@ -1,0 +1,5 @@
+<%= form_for @user_course, remote: true do |f| %>
+  <%= f.hidden_field :status, value: "finished"  %>
+
+  <%= f.submit t(".btn_submit"), class: "btn btn-primary" %>
+<% end %>

@@ -1,7 +1,7 @@
 <div class="mail">
   <div class="agileinfo_mail_grids">
     <div class="col-sm-4">
-      <%= gravatar_for @user %>
+      <%= image_tag @user.picture, class: "img-circle" %>
       <ul>
         <li><%= t".name" %><h2><span><%= @user.name %></span></h2></li>
       </ul>
@@ -38,7 +38,7 @@
                   <figure>
                     <div class="snipcart-item block">
                       <% course.subjects.each do |subject| %>
-                        <%= subject.name %><br>
+                        <% subject.name %><br>
                         <%= render partial: "task", collection:
                           Task.get_task(subject.id), as: :task %>
                       <% end %>

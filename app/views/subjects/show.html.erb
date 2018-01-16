@@ -3,18 +3,18 @@
   <aside class="col-md-4">
     <section class="subject_info">
       <h1>
-        <%= @subject.name %>
+        <% @subject.name %>
       </h1>
-      <p><%= @subject.description %></p><br>
+      <p><% @subject.description %></p><br>
       <ul class="list-group">
         <% @tasks.each do |task| %>
           <li class="list-group-item"><%= task.name %><br></li>
         <% end %>
       </ul>
-      <p><%= @subject.description %></p>
-      <% @tasks.each do |x| %>
-        <p><%= x.name %></p>
-        <p><%= x.description %></p>
+      <p><% @subject.description %></p>
+      <% @tasks.each do |task| %>
+        <p><% task.name %></p>
+        <p><% task.description %></p>
       <% end %>
     </section>
   </aside>
