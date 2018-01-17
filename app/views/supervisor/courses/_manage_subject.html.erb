@@ -1,0 +1,12 @@
+<tr>
+  <% course_subject ||= @course_subject %>
+  <td><%= image_tag course_subject.subject_picture %></td>
+  <td><%= course_subject.subject_name %></td>
+  <td>
+    <% if course_subject.init? || course_subject.stopped? %>
+      <%= render partial: "start_subject", object: @course_subject = course_subject %>
+    <% else %>
+      <%= render partial: "stop_subject", object: @course_subject = course_subject %>
+    <% end %>
+  </td>
+</tr>

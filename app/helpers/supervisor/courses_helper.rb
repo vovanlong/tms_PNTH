@@ -5,7 +5,10 @@ module Supervisor
     end
 
     def load_user_form course, trainee
-      course.user_courses.find_by(user_id: trainee.id)
+      @user_course = course.user_courses.find_by(user_id: trainee.id)
+      return if @user_course
+      flash[:danger] = t "error"
+      redirect_to root_path
     end
 
     def start course
