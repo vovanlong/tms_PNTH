@@ -1,6 +1,6 @@
 <% provide :title, t(".title") %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12">
     <section class="subject_info">
       <h1>
         <% @subject.name %>
@@ -8,14 +8,27 @@
       <p><% @subject.description %></p><br>
       <ul class="list-group">
         <% @tasks.each do |task| %>
-          <li class="list-group-item"><%= task.name %><br></li>
+          <% @user_task = get_user_task(current_user.id, task.id) %>
+          <div class="col-md-10" id= "icon-status" >
+            <div class="col-md-1 w3agile_event_grid_left">
+              <%= get_status @user_task %>
+            </div>
+            <div class="col-md-9 w3agile_event_grid_right">
+              <h4><%= task.name %></h4>
+              <li class="list-group-item"><%= task.description %><br></li>
+            </div>
+            <div class="col-md-2" id="action-task">
+              <% if @user_task.blank? %>
+                <%= render partial: "receive_task", locals: {task_id: task.id} %>
+              <% elsif @user_task.doing? %>
+                <%= render partial: "finish_task" %>
+              <% else %>
+                <%= render "completed" %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </ul>
-      <p><% @subject.description %></p>
-      <% @tasks.each do |task| %>
-        <p><% task.name %></p>
-        <p><% task.description %></p>
-      <% end %>
     </section>
   </aside>
 </div>
