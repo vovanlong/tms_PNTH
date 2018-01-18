@@ -1,15 +1,25 @@
 <nav class="navbar nav_bottom">
   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-    <ul class="nav navbar-nav nav_1">
-      <% if logged_in? %>
-        <li><%= t(".show_user",
-          avatar: link_to(image_tag(current_user.picture, class: "img-mini-avatar"), current_user),
-          name: link_to(current_user.name)).html_safe %></li>
-      <% end %>
-      <li><%= link_to t("static_pages.home.title"), root_path %></a></li>
-      <% if logged_in? %>
-        <li><%= link_to t("courses.title"), courses_path %></a></li>
-      <% end %>
+    <ul class="nav navbar-nav nav_1 sidebar-design">
+      <li>
+        <div>
+          <%= image_tag current_user.picture, class: "img-mini-avatar" %>
+          <%= link_to current_user.name, current_user %></div>
+      </li>
+      <div>
+        <li>
+        <%= fa_icon "home" %>
+        <%= link_to t("static_pages.home.title"), root_path %></a>
+      </li>
+      </div>
+      <div>
+        <% if logged_in? %>
+        <li>
+          <%= fa_icon "book" %>
+          <%= link_to t("courses.title"), courses_path %></a>
+          <% end %>
+        </li>
+      </div>
     </ul>
   </div>
 </nav>

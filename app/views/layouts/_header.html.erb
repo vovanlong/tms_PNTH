@@ -1,16 +1,16 @@
 <div class="agileits_header">
-  <div class="container">
-    <div class="w3l_offers")>
+  <div class="container container_header">
+    <div class="w3l_offers">
       <h1> <%= link_to(t(".framgia").html_safe, root_path) %></h1>
     </div>
     <div class="w3l_header_right1">
       <ul>
-      <% if logged_in? %>
-        <%= link_to image_tag(current_user.picture, class: "img-mini-avatar"), current_user %>
         <li class="dropdown profile_details_drop">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-user" aria-hidden="true"><%= t".account" %>
-          </i><span class="caret"></span></a>
+            <% if logged_in? %>
+            <%= link_to image_tag(current_user.picture, class: "img-mini-avatar"),
+              current_user %>
+          <span class="caret"></span></a>
           <div class="mega-dropdown-menu">
             <div class="w3ls_vegetables">
               <ul class="dropdown-menu drp-mnu">

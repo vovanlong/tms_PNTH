@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def correct_user?
+    current_user? @user
+  end
+
   def correct_user
     find_user
     redirect_to(root_url) unless current_user?(@user)

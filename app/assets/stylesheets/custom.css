@@ -156,7 +156,8 @@ footer {
   display: inline-block;
   margin-bottom: 15px;
   margin-top: 15px;
-  padding-top: 0px; }
+  padding-top: 0px;
+}
 
 .item img {
   max-width: 100%;
@@ -252,4 +253,71 @@ footer {
 
 .btn-new-course {
   padding: 20px;
+}
+
+.icon-status{
+  background-color: #ecffe6;
+  order: 3px solid #b3d9ff;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.fa-task_init{
+  color: #00CC00 !important;
+}
+
+.fa-task_doing{
+  color: #3399FF !important;
+}
+
+.fa-task_done{
+  color: #FF3333 !important;
+}
+
+.action-task{
+  padding-top: 10px;
+}
+
+.show_user{
+  padding: 10px;
+  margin: 10px;
+  background-color: #ececf8;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.show_user ul{
+  list-style-type: none;
+  text-align: left;
+}
+
+.show-tasks{
+  padding: 10px;
+  margin: 10px;
+  background-color: #ececf8;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.status_task{
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  display: inline-block;
+}
+
+.agile_top_brand_left_grid1 .btn{
+  width: 20px;
+  height: 20px;
+}
+
+.action-task{
+  margin-top: 10px;
+}
+
+.action-task .btn{
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
 }

@@ -11,17 +11,6 @@ class SubjectsController < ApplicationController
 
   private
 
-  def load_course
-    @course = Course.find_by id: params[:course_id]
-    return if @course
-    flash[:danger] = t "wrong"
-    redirect_to root_path
-  end
-
-  def subject_params
-    params.require(:subject).permit :name, :description, :duration, :picture
-  end
-
   def load_subject
     @subject = Subject.find_by id: params[:id]
     return if @subject
