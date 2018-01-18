@@ -1,0 +1,11 @@
+<% course ||= @course %>
+<% subject ||= @subject %>
+<%= form_for([:supervisor, subject.course_subjects.build], html: {remote: true, id: "new_course_subject_#{subject.id}"}) do |f| %>
+  <%= hidden_field_tag :subject_id, subject.id %>
+  <%= hidden_field_tag :course_id, course.id %>
+
+  <%= f.label :start_at %>
+  <%= f.date_field :start_at, data: {provide: "datepicker"}, value: Date.today.strftime("%m/%d/%Y") %>
+
+  <%= f.submit t(".btn_submit"), class: "btn btn-success" %>
+<% end %>

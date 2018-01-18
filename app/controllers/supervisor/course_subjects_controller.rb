@@ -3,17 +3,24 @@ module Supervisor
     before_action :check_params, except: %i(update)
     before_action :logged_in_user
     before_action :admin_user
-    before_action :set_course_subject, only: %i(update)
+    before_action :set_course_subject, only: %i(update destroy)
 
     def create
       start_at = Date.parse(params[:course_subject][:start_at], "%m/%d/%Y")
       @course.add_sb @subject, start_at
-      redirect_to edit_supervisor_course_path(@course)
+      @cou_subject = @course.course_subjects.find_by(subject_id: @subject.id)
+      respond_to do |format|
+        format.html{redirect_to edit_supervisor_course_path(@course)}
+        format.js
+      end
     end
 
     def destroy
       @course.remove_sb @subject
-      redirect_to edit_supervisor_course_path(@course)
+      respond_to do |format|
+        format.html{redirect_to edit_supervisor_course_path(@course)}
+        format.js
+      end
     end
 
     def update
