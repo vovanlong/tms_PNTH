@@ -10,6 +10,10 @@ class Course < ApplicationRecord
   validate  :picture_size
   mount_uploader :picture, PictureUploader
 
+  scope :total_size, ->{all.size}
+  scope :total_init_size, ->{init.size}
+  scope :total_in_progress_size, ->{in_progress.size}
+  scope :total_finished_size, ->{finished.size}
   scope :created_desc, ->{order(created_at: :desc)}
   enum status: {init: 0, in_progress: 1, finished: 2}
 

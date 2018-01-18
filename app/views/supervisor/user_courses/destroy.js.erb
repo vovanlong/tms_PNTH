@@ -7,6 +7,6 @@ else{
 showAlert(I18n.t("alert.removed"));
 
 function showAlert(message){
-  $('#alert').html(message);
-  $('#alert').show().fadeIn().delay(3000).fadeOut();
+  $('.alert-popup').html(message);
+  $('.alert-popup').show().fadeIn().delay(3000).fadeOut();
 }

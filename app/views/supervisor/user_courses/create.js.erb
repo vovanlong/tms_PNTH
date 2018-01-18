@@ -2,6 +2,6 @@ $('#new_user_course_<%= @user_course.user.id %>').parent().html('<%= j(render('s
 showAlert(I18n.t("alert.added"));
 
 function showAlert(message){
-  $('#alert').html(message);
-  $('#alert').show().fadeIn().delay(3000).fadeOut();
+  $('.alert-popup').html(message);
+  $('.alert-popup').show().fadeIn().delay(3000).fadeOut();
 }

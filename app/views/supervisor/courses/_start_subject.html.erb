@@ -1,5 +1,0 @@
-<%= form_for [:supervisor, @course_subject], remote: true, class: "form-group" do |f| %>
-  <%= f.hidden_field :status, value: "started" %>
-
-  <%= f.submit t(".btn_submit"), class: "btn btn-success" %>
-<% end %>
