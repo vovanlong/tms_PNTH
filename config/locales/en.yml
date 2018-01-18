@@ -34,21 +34,33 @@ en:
   title: "Framgia training system"
   wrong: "Somthing went wrong!"
   error: "Somthing went wrong"
+  navigation: "MAIN NAVIGATION"
+  label: "LABELS"
+  dashboard: "Dashboard"
   Max_size_picure: "Maximum file size is 5MB. Please choose a smaller file."
   layouts:
     header:
-      framgia: "<span>Framgia</span> TMS"
+      logo_mini: "logo-mini"
+      logo_lg: "logo-lg"
+      logo_link: "%{logo}"
+      framgia: "TMS"
       profile: "Profile"
       settings: "Settings"
       account: "Account"
       log_in: "Log in"
       log_out: "Log out"
     footer:
-      des: "2018 framgia training system"
+      version: "Version: 1.0"
+      strong: "Copyright by Framgia, 2018."
+      reserved: "All rights reserved."
+      des: "TMS for supervisors"
+    shared:
+      sidebar:
+        my_courses: "My courses"
   supervisor:
     layouts:
       header:
-        framgia: "<span>Framgia</span> TMS"
+        framgia: "TMS"
         profile: "Profile"
         settings: "Settings"
         account: "Account"
@@ -56,6 +68,15 @@ en:
         log_out: "Log out"
       footer:
         des: "2018 TMS for supervisors"
+        version: "Version: 1.0"
+        strong: "Copyright by Framgia, 2018."
+        reserved: "All rights reserved."
+        des: "TMS for supervisors"
+      shared:
+        sidebar:
+          manage_users: "Manage users"
+          manage_courses: "Manage courses"
+          manage_subjects: "Manage subjects"
     subject:
       show:
         name: "Name Subject: "

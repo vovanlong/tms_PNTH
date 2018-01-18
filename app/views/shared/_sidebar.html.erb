@@ -1,25 +1,25 @@
-<nav class="navbar nav_bottom">
-  <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-    <ul class="nav navbar-nav nav_1 sidebar-design">
-      <li>
-        <div>
-          <%= image_tag current_user.picture, class: "img-mini-avatar" %>
-          <%= link_to current_user.name, current_user %></div>
-      </li>
-      <div>
-        <li>
-        <%= fa_icon "home" %>
-        <%= link_to t("static_pages.home.title"), root_path %></a>
-      </li>
-      </div>
-      <div>
-        <% if logged_in? %>
-        <li>
-          <%= fa_icon "book" %>
-          <%= link_to t("courses.title"), courses_path %></a>
-          <% end %>
-        </li>
-      </div>
-    </ul>
-  </div>
-</nav>
+<aside class="main-sidebar">
+  <section class="sidebar">
+      <% if logged_in? %>
+        <div class="user-panel">
+          <div class="pull-left image">
+            <%= image_tag current_user.picture, class: "user-circle" %>
+          </div>
+          <div class="pull-left info">
+            <p><%= current_user.name %></p>
+            <a href="#"><i class="fa fa-circle text-success"></i><%= current_user.roles %></a>
+          </div>
+        </div>
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header"><%= t "navigation" %></li>
+          <li class="active treeview">
+            <ul class="treeview-menu">
+              <li class="active"><%= link_to t("static_pages.home.title"), root_path %></li>
+              <li><%= link_to t(".my_courses"), courses_path %></li>
+            </ul>
+          </li>
+          <li class="header"><%= t "label" %></li>
+        </ul>
+      <% end %>
+  </section>
+</aside>
