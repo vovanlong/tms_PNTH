@@ -19,10 +19,9 @@ class UserTasksController < ApplicationController
 
   def load_user_task
     @user_task = UserTask.find_by id: params[:id]
-    unless @user_task
-      flash[:danger] = t "error"
-      redirect_to root_path
-    end
+    return if @user_task
+    flash[:danger] = t "error"
+    redirect_to root_path
   end
 
   def check_status
@@ -33,10 +32,9 @@ class UserTasksController < ApplicationController
   def check_params_create
     @task_id = params[:task_id]
     @user_id = params[:user_id]
-    unless @task_id && @user_id
-      flash[:danger] = t "error"
-      redirect_to root_path
-    end
+    return if @task_id && @user_id
+    flash[:danger] = t "error"
+    redirect_to root_path
   end
 
   def return_page

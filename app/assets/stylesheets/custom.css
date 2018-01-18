@@ -321,3 +321,10 @@ footer {
   border-radius: 5px;
   text-align: center;
 }
+
+.chart-progress-task{
+  padding: 20px;
+  margin: 0px 20px 50px 80px;
+  background-color: #f5f3ea;
+  border-radius: 10px;
+}

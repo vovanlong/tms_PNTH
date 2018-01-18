@@ -1,5 +1,5 @@
 <%= form_for @user_task, html: {id: "edit_user_task_#{@user_task.id}", remote: true} do |f| %>
-  <%= hidden_field_tag :status, Settings.status_doing %>
+  <%= hidden_field_tag :status, Settings.status_done %>
 
   <%= f.submit t(".doing"), class: "btn btn-info" %>
 <% end %>

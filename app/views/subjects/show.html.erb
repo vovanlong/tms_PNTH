@@ -2,6 +2,9 @@
 <div class="col-md-12 finish-subject">
   <%= render "finish_subject", object: @user_subject %>
 </div>
+<div class="col-md-8 chart-progress-task">
+  <%= show_chart_subject(@user_courses,@subject_current) %>
+</div>
 <div class="row">
   <div class="container">
     <aside class="col-md-12">

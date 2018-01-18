@@ -16,3 +16,4 @@ size_user: 50
 picture_size: 5
 status_doing: "doing"
 status_done: "done"
+name_default: "None"

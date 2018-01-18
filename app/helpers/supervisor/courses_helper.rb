@@ -12,11 +12,12 @@ module Supervisor
     def start course
       users = course.users
       subjects = course.subjects
-      if course.start(users, subjects)
-        flash[:success] = t "supervisor.courses.update_status.success"
-      else
-        flash[:success] = t "supervisor.courses.update_status.failed"
-      end
+      flash[:success] =
+        if course.start(users, subjects)
+          t "supervisor.courses.update_status.success"
+        else
+          t "supervisor.courses.update_status.failed"
+        end
     end
   end
 end
