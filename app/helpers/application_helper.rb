@@ -12,6 +12,10 @@ module ApplicationHelper
     course_subject.deadline - course_subject.subject.duration.days
   end
 
+  def course_duration course
+    (course.end_at - course.start_at).to_i
+  end
+
   def picture_for object
     if object.picture?
       image_tag(object.picture.url, alt: object.name, class: "img-thumbnail")

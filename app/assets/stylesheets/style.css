@@ -43,10 +43,7 @@ span.glyphicon.glyphicon-shopping-cart.my-cart-icon.my-cart-icon-affix {
     background-color: #FA1818;
     border-color: #FA1818;
 }
-.modal-dialog {
-    width: 850px;
-	margin:75px auto 30px;
-}
+
 .snipcart-thumb a {
     display: block;
     text-align: center;
@@ -3556,9 +3553,6 @@ input.checkbox:checked:after {
 	.container {
 		width: 765px;
 	}
-	.modal-dialog {
-		width: 710px;
-	}
 	.w3l_banner_nav_right_banner3 h3, .w3l_banner_nav_right_banner4 h3, .w3l_banner_nav_right_banner5 h3, .w3l_banner_nav_right_banner6 h3, .w3l_banner_nav_right_banner7 h3, .w3l_banner_nav_right_banner8 h3, .w3l_banner_nav_right_banner9 h3, .w3l_banner_nav_right_banner10 h3 {
 		font-size: 1.4em;
 		width: 65%;
@@ -3738,10 +3732,6 @@ input.checkbox:checked:after {
 	.container {
 		width: 710px;
 	}
-	.modal-dialog {
-		width: 650px;
-		margin: 130px auto 30px;
-	}
 	.more {
 		margin-left: 33.5em;
 	}
@@ -3804,9 +3794,6 @@ input.checkbox:checked:after {
 	}
 	.wthree_banner_bottom_left {
 		width: 75%;
-	}
-	.modal-dialog {
-		width: 600px;
 	}
 	.w3l_fresh_vegetables_grid {
 		width: 70%;
@@ -3901,9 +3888,6 @@ input.checkbox:checked:after {
 	.w3ls_logo_products_left1 ul.special_items li i {
 		padding: 0 1em;
 	}
-	.modal-dialog {
-		width: 535px;
-	}
 	.more {
 		margin-left: 26em;
 	}
@@ -3989,9 +3973,6 @@ input.checkbox:checked:after {
 	}
 	.product_list_header span {
 		top: .5em;
-	}
-	.modal-dialog {
-		width: 468px;
 	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 10px !important;
@@ -4293,9 +4274,6 @@ input.checkbox:checked:after {
 	.top_brand_left, .w3ls_w3l_banner_left {
 		width: 80%;
 	}
-	.modal-dialog {
-		width: 390px;
-	}
 	.w3agile_newsletter_right input[type="submit"] {
 		width: 37.7%;
 	}
@@ -4432,9 +4410,6 @@ input.checkbox:checked:after {
 	}
 	.view h4 {
 		margin: 2.5em 0 0;
-	}
-	.modal-dialog {
-		width: 290px;
 	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 3px !important;

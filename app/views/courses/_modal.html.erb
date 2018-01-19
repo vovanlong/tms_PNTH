@@ -1,0 +1,53 @@
+<div id="myModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= @course.name %></h4>
+        <div class="user-course-status">
+          <span class="<%= @user_course.status %>"><%= @course.status %></span>
+        </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="page-header">
+                <h1><%= @course.description %></h1>
+                <h5><%= t(".total", total: current_user.user_subjects.size).html_safe %></h5>
+                <h5><%= t(".total_days", total: course_duration(@course)).html_safe %></h5>
+              </div>
+              <div class="timeline-item">
+                <ul class="timeline timeline-horizontal">
+                  <li class="timeline-item">
+                    <div class="timeline-badge primary"><i class="glyphicon glyphicon-check"></i></div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h5><%= t ".started_at" %></h5>
+                      </div>
+                      <div class="timeline-body">
+                        <p><%= @course.start_at %></p>
+                      </div>
+                    </div>
+                  </li>
+                  <%= render partial: "modal_item", collection: current_user.user_subjects, as: :user_subject %>
+                  <li class="timeline-item">
+                    <div class="timeline-badge danger"><i class="glyphicon glyphicon-check"></i></div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h5><%= t ".end_at" %></h5>
+                      </div>
+                      <div class="timeline-body">
+                        <p><%= @course.end_at %></p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

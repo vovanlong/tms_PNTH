@@ -58,6 +58,10 @@ class User < ApplicationRecord
     user_tasks.create(user_id: user_id, task_id: task_id, status: status)
   end
 
+  def course_active_size
+    user_courses.in_progress.size
+  end
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

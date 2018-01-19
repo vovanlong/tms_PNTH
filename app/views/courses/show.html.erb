@@ -1,14 +1,16 @@
+<%= render "modal" %>
 <% provide :title, @course.name %>
 <div class="row">
   <aside class="col-md-8">
     <section class="course_info">
-      <h1>
-        <%= @course.name %>
-      </h1>
+      <%= image_tag @course.picture, class: "img img-circle", id: "myBtn" %>
       <div class="user-course-status">
+        <h1>
+          <%= @course.name %>
+        </h1>
         <span class="<%= @user_course.status %>"><%= @user_course.status %></span>
+        <p><%= @course.description %></p>
       </div>
-      <p><%= @course.description %></p>
     </section>
   </aside>
   <aside class="col-md-4">

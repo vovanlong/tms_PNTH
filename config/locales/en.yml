@@ -191,6 +191,11 @@ en:
       view_content: "View content"
     subject:
       alltime: " - %{time} days"
+    modal:
+      total_days: "Total study days: %{total}"
+      started_at: "Started at: "
+      end_at: "End at: "
+      total: "Total: %{total} subjects."
     index:
       delete: "delete"
       confirm_delete: "Are you sure?"
@@ -246,6 +251,7 @@ en:
     user_courses:
       update:
         failed: "Update failed"
+        check_active: "Finish another course before start this course!"
     sessions_controller:
       success: "Login success"
       fail: "Invalid email/password combination"

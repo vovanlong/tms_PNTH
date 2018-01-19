@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "bootstrap-modal-rails"
 gem "carrierwave", "1.1.0"
 gem "mini_magick", "4.7.0"
 gem "fog-aws", "2.0.0"
