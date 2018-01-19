@@ -17,3 +17,4 @@ picture_size: 5
 status_doing: "doing"
 status_done: "done"
 name_default: "None"
+area_size: 5

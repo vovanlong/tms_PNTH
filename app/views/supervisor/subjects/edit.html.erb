@@ -1,0 +1,18 @@
+
+<div class="col-md-5">
+  <div class="col-md-12">
+    <%= render "form" %>
+  </div>
+</div>
+<div class="col-md-7">
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.name, @task %>
+      <% if current_user.admin? || current_user.trainer? %>
+        <%= link_to t("tasks.index.delete"), supervisor_task_path(task),
+          method: :delete, data: {confirm: t("tasks.index.confirm_delete")} %> |
+        <%= link_to t("tasks.index.update"), edit_supervisor_task_path(task)%>
+      <% end %>
+    </li>
+  <% end %>
+</div>
