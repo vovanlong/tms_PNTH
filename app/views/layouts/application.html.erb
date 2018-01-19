@@ -9,21 +9,26 @@
     <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
   </head>
-  <body>
-    <%= render "layouts/header" %>
-    <div class="w3l_banner_nav_left">
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+      <%= render "layouts/header" %>
       <%= render "shared/sidebar" %>
-    </div>
-    <div class="w3l_banner_nav_right">
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-        <%= yield %>
-        <div class="alert alert-popup" role="alert" ></div>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <h1>
+            <%= t "dashboard" %>
+          </h1>
+        </section>
+        <section class="content">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+          <% end %>
+          <div class="alert alert-popup" role="alert" ></div>
+          <%= yield %>
+        </section>
       </div>
+      <div class="clear-fix"></div>
+      <%= render "layouts/footer" %>
     </div>
-    <div class="clearfix"></div>
-    <%= render "layouts/footer" %>
   </body>
 </html>

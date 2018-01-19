@@ -1,6 +1,6 @@
 <tr>
   <% cou_subject ||= @cou_subject %>
-  <td><%= image_tag cou_subject.subject_picture %></td>
+  <td><%= image_tag cou_subject.subject_picture, class: "img img-circle" %></td>
   <td><%= cou_subject.subject_name %></td>
   <td>
     <% if cou_subject.course.finished? %>

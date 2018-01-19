@@ -3,7 +3,7 @@ module Supervisor
     layout "supervisor_layout"
     before_action :logged_in_user
     before_action :admin_user
-    before_action :find_user
+    before_action :find_user, except: %i(index new)
 
     def index
       @trainers = User.trainer.desc_created_at.page(params[:page]).per_page(Settings.courses.per_page)

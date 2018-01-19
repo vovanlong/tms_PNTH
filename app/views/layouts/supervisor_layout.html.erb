@@ -7,21 +7,26 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
     <%= render "supervisor/layouts/shim" %>
   </head>
-  <body>
-    <%= render "supervisor/layouts/header" %>
-    <div class="w3l_banner_nav_left">
+  <body class="hold-transition skin-purple sidebar-mini">
+    <div class="wrapper">
+      <%= render "supervisor/layouts/header" %>
       <%= render "supervisor/shared/sidebar" %>
-    </div>
-    <div class="w3l_banner_nav_right">
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-        <div class="alert alert-popup" role="alert" ></div>
-        <%= yield %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <h1>
+            <%= t "dashboard" %>
+          </h1>
+        </section>
+        <section class="content">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+          <% end %>
+          <div class="alert alert-popup" role="alert" ></div>
+          <%= yield %>
+        </section>
       </div>
+      <div class="clear-fix"></div>
+      <%= render "supervisor/layouts/footer" %>
     </div>
-    <div class="clearfix"></div>
-    <%= render "supervisor/layouts/footer" %>
   </body>
 </html>

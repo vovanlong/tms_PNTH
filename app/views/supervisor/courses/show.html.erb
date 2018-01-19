@@ -51,7 +51,7 @@
         <tbody>
           <% @trainees.each do |trainee| %>
             <tr>
-              <td><%= image_tag trainee.picture %></td>
+              <td><%= image_tag trainee.picture, class: "img img-mini-avatar" %></td>
               <td><%= link_to trainee.name, trainee %></td>
             </tr>
           <% end %>
