@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= subject.name %>
+  <td>
+    <%= subject.duration %>
+  </td>
+  <td>
+    <% if load_subject_form(@course, subject) %>
+      <%= render partial: "supervisor/courses/button/remove_subject", object: @subject = subject %>
+    <% else %>
+      <%= render partial: "supervisor/courses/button/add_subject", local: @subject = subject %>
+    <% end %>
+  </td>
+</tr>

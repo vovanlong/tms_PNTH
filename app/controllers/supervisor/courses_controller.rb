@@ -76,20 +76,20 @@ module Supervisor
 
     def load_subjects course
       @subjects = course.subjects
-      @all_subjects = Subject.all
+      @all_subjects = Subject.all.page(params[:page]).per_page(Settings.courses.per_page)
     end
 
     def load_trainers course
-      @trainers = course.users.trainer.alphabet
+      @trainers = course.users.trainer.alphabet.page(params[:page]).per_page(Settings.courses.per_page)
     end
 
     def load_trainees course
-      @trainees = course.users.trainee.alphabet
+      @trainees = course.users.trainee.alphabet.page(params[:page]).per_page(Settings.courses.per_page)
     end
 
     def load_all_users
-      @trainers = User.trainer.alphabet
-      @trainees = User.trainee.alphabet
+      @trainers = User.trainer.alphabet.page(params[:page]).per_page(Settings.courses.per_page)
+      @trainees = User.trainee.alphabet.page(params[:page]).per_page(Settings.courses.per_page)
     end
   end
 end

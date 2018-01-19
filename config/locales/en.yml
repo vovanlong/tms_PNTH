@@ -65,6 +65,10 @@ en:
       course:
         update: "update"
       button:
+        add_subject:
+          btn_submit: "add"
+        remove_subject:
+          btn_submit: "remove"
         start_subject:
           btn_submit: "start"
         stop_subject:

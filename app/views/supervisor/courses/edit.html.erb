@@ -39,9 +39,10 @@
               </tr>
             </thead>
             <tbody>
-              <%= render partial: "add_subject", collection: @all_subjects, as: :subject %>
+              <%= render partial: "add_remove_subject", collection: @all_subjects, as: :subject %>
             </tbody>
           </table>
+          <%= will_paginate @all_subjects %>
         </div>
         <div id="menu1" class="tab-pane fade">
           <%= t ".add_members" %>
@@ -58,6 +59,7 @@
               <%= render partial: "manage_trainer", collection: @trainers, as: :trainer %>
             </tbody>
           </table>
+          <%= will_paginate @trainers %>
           <table class="table table-bordered">
             <h3><%= t ".trainees" %></h3>
             <thead>
@@ -71,6 +73,7 @@
               <%= render partial: "manage_trainee", collection: @trainees, as: :trainee %>
             </tbody>
           </table>
+          <%= will_paginate @trainees %>
         </div>
       </div>
     <% end %>
