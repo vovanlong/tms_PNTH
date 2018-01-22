@@ -3,7 +3,9 @@
 <div class="row">
   <aside class="col-md-8">
     <section class="course_info">
-      <%= image_tag @course.picture, class: "img img-circle", id: "myBtn" %>
+    <div class="picture_nomal">
+      <%= picture_for @course %>
+    </div>
       <div class="user-course-status">
         <h1>
           <%= @course.name %>
