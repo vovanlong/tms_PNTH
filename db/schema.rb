@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20180110092405) do
 
-  create_table "course_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "course_subjects", force: :cascade do |t|
     t.date "deadline"
     t.integer "status", default: 0
-    t.bigint "course_id"
-    t.bigint "subject_id"
+    t.integer "course_id"
+    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_subjects_on_course_id"
     t.index ["subject_id"], name: "index_course_subjects_on_subject_id"
   end
 
-  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "status", default: 0
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180110092405) do
     t.string "picture"
   end
 
-  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "duration"
@@ -43,46 +43,46 @@ ActiveRecord::Schema.define(version: 20180110092405) do
     t.string "picture"
   end
 
-  create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.bigint "subject_id"
+    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_tasks_on_subject_id"
   end
 
-  create_table "user_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_courses", force: :cascade do |t|
     t.integer "status", default: 0
-    t.bigint "user_id"
-    t.bigint "course_id"
+    t.integer "user_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_user_courses_on_course_id"
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 
-  create_table "user_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_subjects", force: :cascade do |t|
     t.integer "status"
-    t.bigint "user_id"
-    t.bigint "subject_id"
+    t.integer "user_id"
+    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
     t.index ["user_id"], name: "index_user_subjects_on_user_id"
   end
 
-  create_table "user_tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_tasks", force: :cascade do |t|
     t.integer "status", default: 0
-    t.bigint "user_id"
-    t.bigint "task_id"
+    t.integer "user_id"
+    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_user_tasks_on_task_id"
     t.index ["user_id"], name: "index_user_tasks_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
@@ -96,13 +96,4 @@ ActiveRecord::Schema.define(version: 20180110092405) do
     t.string "picture"
   end
 
-  add_foreign_key "course_subjects", "courses"
-  add_foreign_key "course_subjects", "subjects"
-  add_foreign_key "tasks", "subjects"
-  add_foreign_key "user_courses", "courses"
-  add_foreign_key "user_courses", "users"
-  add_foreign_key "user_subjects", "subjects"
-  add_foreign_key "user_subjects", "users"
-  add_foreign_key "user_tasks", "tasks"
-  add_foreign_key "user_tasks", "users"
 end
